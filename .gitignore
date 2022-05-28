@@ -1,0 +1,4 @@
+*.csv
+code_backup.txt
+.idea/
+.vscode/

@@ -133,12 +133,12 @@ for exam_index in exam_indexes:
         else:
             student_scores = merge_scores(*[exams[i].check_score() for i in exam_sub_indexes])
     else:
-        raise ValueError
+        raise ValueError("输入值有误")
     print("[INFO] 正在导出 .csv 文件")
     if len(exam_names) == 1:
         output_filename = f"{CURRENT_PATH}{exam_names[0]}.csv"
     else:
-        print("[INFO] 以下为待选文件名")
+        print("[INFO] 以下为备选文件名")
         [print(f"     {i} - {str(exam_names[i])}") for i in range(len(exam_names))]
         user_input = input(f"[INFO] 请选择导出文件名(序号)或自定义文件名(custom+名称)。")
         if user_input.find('custom') == 0:
@@ -147,7 +147,7 @@ for exam_index in exam_indexes:
             if 0 <= int(user_input) < len(exam_names):
                 output_filename = f"{CURRENT_PATH}{exam_names[int(user_input)]}.csv"
             else:
-                raise ValueError
+                raise ValueError("输入值有误")
     with open(output_filename, 'w', encoding='utf-8') as f:
         cw = csv.DictWriter(f, fieldnames=list(student_scores[0].keys()))
         cw.writeheader()

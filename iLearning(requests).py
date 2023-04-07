@@ -23,9 +23,9 @@ s_query_gen = lambda id, i: {'examId': id, 'classId': '', 'lastExamId': '', 'sea
                              'direction': '', 'order': '', 'pageIndexInt': str(i), 'electiveTypeCode': '',
                              'version': 'V3', 't': ms_timestamp()}  # 查询字符串生成器(score)
 ei_query_gen = lambda id: {'examId': id, 't': ms_timestamp()}  # 查询字符串生成器(exam_info)
-el_query_gen = lambda i: {'queryType': 'academicYear', 'termId': '1500000100073166789',
-                          'teachingCycleId': '1500000100073166791', 'beginTime': '1628956800000',
-                          'endTime': ms_timestamp(), 'pageIndex': i, 't': ms_timestamp()}  # 查询字符串生成器(exam_list)
+el_query_gen = lambda i: {'queryType': 'academicYear', 'termId': '1500000100156154147',
+                          'teachingCycleId': '1500000100156155045', 'beginTime': '1660320000000',
+                          'endTime': 1675526399000, 'pageIndex': i, 't': ms_timestamp()}  # 查询字符串生成器(exam_list)
 
 
 class Examination:
